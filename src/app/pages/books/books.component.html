@@ -1,0 +1,15 @@
+<section class="container py-4">
+    <h1 class="text-center mb-4 fs-3">Registro de Libros</h1>
+    <hr/>
+    <div class="row justify-content-center">
+    <div class="col-12 col-sm-5 col-md-5 justify-content-center">
+    <books-book-form (newBook)="bookService.addBook($event)"/>
+    </div>
+    
+    <div class="col-12  col-sm-7 col-md-5 justify-content-center">
+    <books-book-list listBook="Lista de Libros"
+        [books]="bookService.books()"/>
+    </div>
+    </div>
+</section>
+

@@ -1,0 +1,49 @@
+<h3 class="mb-3 fs-4">{{listBook()}}</h3>
+<ul class="list-group" style="max-width: none; width: 100%">
+    @for (book of books(); track book.id; let idx = $index) {
+        
+        @if (book.quantity > 20) {
+        <li class="list-group-item">
+            <div class="row">
+            <div class="col-6 text-center">
+                <div><span class="fw-semibold">Libro Nº {{ idx + 1 }}</span></div>
+                <div><span class="fw-semibold">Título:</span> {{ book.title }}</div>
+            </div>
+            <div class="col-6 text-center">
+                <div><span class="fw-semibold">Autor:</span> {{ book.author }}</div>
+                <div><span class="fw-semibold">Cantidad:</span></div>
+                <div><span class="text-success fw-semibold">{{ book.quantity }}</span></div>
+            </div>
+            </div>
+        </li>
+        } @else if (book.quantity == 0) {
+        <li class="list-group-item">
+            <div class="row">
+            <div class="col-6 text-center">
+                <div><span class="fw-semibold">Libro Nº {{ idx + 1 }}</span></div>
+                <div><span class="fw-semibold">Título:</span> {{ book.title }}</div>
+            </div>
+            <div class="col-6 text-center">
+                <div><span class="fw-semibold">Autor:</span> {{ book.author }}</div>
+                <div><span class="fw-semibold">Cantidad:</span></div>
+                <div><span class="badge bg-warning">No disponible</span></div>
+            </div>
+            </div>
+        </li>
+        } @else {
+        <li class="list-group-item">
+            <div class="row">
+            <div class="col-6 text-center">
+                <div><span class="fw-semibold">Libro Nº {{ idx + 1 }}</span></div>
+                <div><span class="fw-semibold">Título:</span> {{ book.title }}</div>
+            </div>
+            <div class="col-6 text-center">
+                <div><span class="fw-semibold">Autor:</span> {{ book.author }}</div>
+                <div><span class="fw-semibold">Cantidad:</span></div>
+                <div><span class="fw-semibold">{{ book.quantity }}</span></div>
+            </div>
+            </div>
+        </li>
+        }
+    }
+</ul>

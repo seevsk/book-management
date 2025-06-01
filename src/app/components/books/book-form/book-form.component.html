@@ -1,0 +1,13 @@
+<div class="w-100 mb-3" style="max-width: 400px;">
+        <h3 class="mb-3 fs-4 text-truncate text-center">Agregar Libro: {{ title() }}</h3>
+        <input type="text" class="form-control mb-2"
+                placeholder="Titulo:" [value]="title()" 
+                (input)="title.set(txtTitle.value)" #txtTitle>
+        <input type="text" class="form-control mb-2"
+                placeholder="Autor:" [value]="author()" 
+                (input)="author.set(txtAuthor.value)" #txtAuthor>
+        <input type="number" class="form-control mb-2"
+                placeholder="Cantidad:" [value]="quantity()" 
+                (input)="quantity.set(+txtQuantity.value)" #txtQuantity>
+        <button (click)="addBook()" class="btn btn-dark mt-2">Agregar</button>
+</div>

@@ -1,0 +1,15 @@
+<div class="w-100 mb-3" style="max-width: 400px;">
+    <h3 class="mb-3 fs-4 text-truncate text-center">
+        Cambiar la Cantidad de Libros
+    </h3>
+    <input type="text" class="form-control mb-2"
+            placeholder="Título:"
+            [value]="title()"
+            (input)="title.set(txtTitle.value)" #txtTitle>
+    <input type="number" class="form-control mb-2"
+            placeholder="Nueva cantidad:"
+            [value]="newQuantity()"
+            (input)="newQuantity.set(+txtQuantity.value)" #txtQuantity>
+    <button (click)="updateBook()" class="btn btn-dark mt-2">Modificar</button>
+</div>
+

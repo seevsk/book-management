@@ -1,0 +1,12 @@
+<section class="container py-4">
+    <h1 class="text-center mb-4 fs-3">Modificar Libro (Título Exacto)</h1>
+    <hr/>
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-6 d-flex justify-content-center">
+            <modify-update-form (updatedBook)="handleUpdate($event)"/>
+        </div>
+    </div>
+    
+    <p class="text-center mt-3">{{ message() }}</p>
+</section>
